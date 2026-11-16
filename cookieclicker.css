@@ -1,0 +1,15 @@
+.cookie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+    transition: transform 0.2s ease-in-out;
+}
+.cookie:hover{
+    transform: scale(1.1);
+}
+.cookieCount{
+    font-size: 24px;
+    margin-top: 20px;
+}
