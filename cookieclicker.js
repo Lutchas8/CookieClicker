@@ -13,12 +13,22 @@ document.getElementById('2XButton').addEventListener('click', function () {
         document.getElementById('cookieCount').textContent = 'Kakor: ' + cookieCount;
         
    }
-perClick *= 2;
+ perClick *= 2;
         document.getElementById('2XButton').textContent = '2X Klick (Aktiverad)';
 
 });
-document.getElementById('upgradeButton').addEventListener('click', function(){
- if(cookieCount >= 100){}
-
+const upgradeButton=document.getElementById('upgradeButton');
+upgradeButton.addEventListener('click', function(){
+ if(cookieCount >= 100){
+    cookieCount=cookieCount-100;
+    document.getElementById('cookieCount').textContent ='Kakor: '+cookieCount;
+    
+    
+ }
+ 
 });
 
+const timer = setInterval(() => {
+    document.getElementById('cookieCount').textContent ='Kakor: '+cookieCount;
+    cookieCount+=totalAutoclick;
+}, 1000);
