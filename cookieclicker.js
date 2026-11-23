@@ -14,21 +14,23 @@ document.getElementById('2XButton').addEventListener('click', function () {
         
    }
  perClick *= 2;
-        document.getElementById('2XButton').textContent = '2X Klick (Aktiverad)';
+        document.getElementById('2XButton').textContent = '2X Klick för 100 kakor';
 
 });
+
 const upgradeButton=document.getElementById('upgradeButton');
 upgradeButton.addEventListener('click', function(){
  if(cookieCount >= 100){
     cookieCount=cookieCount-100;
     document.getElementById('cookieCount').textContent ='Kakor: '+cookieCount;
+    totalAutoclick++;
     
     
  }
  
 });
 
-const timer = setInterval(() => {
-    document.getElementById('cookieCount').textContent ='Kakor: '+cookieCount;
+const timer = setInterval(function() {
     cookieCount+=totalAutoclick;
+    document.getElementById('cookieCount').textContent ='Kakor: '+ cookieCount;
 }, 1000);
